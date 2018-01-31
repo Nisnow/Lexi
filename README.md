@@ -6,3 +6,5 @@ TO DO:
 - Delete word
 - Search word
 - Alphabetize 
+- Filters (noun, verb, etc)
+- Derivations filter
