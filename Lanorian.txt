@@ -1,7 +1,5 @@
 arjetuq		silver metal
 fervjak		to burn
-din		two
-kerik		to want
-shini		which
-mhus		star
 vher		day
+tu		three
+khiv		four

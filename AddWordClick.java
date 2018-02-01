@@ -13,9 +13,17 @@ import java.io.*;
 
 public class AddWordClick implements ActionListener
 {
+    private JButton button;
+    
+    public AddWordClick(JButton b)
+    {
+        button = b;
+    }
+    
     public void actionPerformed(ActionEvent e)
     {
-        AddWordFrame awf = new AddWordFrame();
+        AddWordFrame awf = new AddWordFrame(button);
+        button.setEnabled(false);
     }
     
 }

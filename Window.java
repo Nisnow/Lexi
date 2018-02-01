@@ -69,7 +69,7 @@ public class Window extends JFrame implements ActionListener
         panel.add(verticalStrut);
         
         JButton addButton = new JButton("Add word");
-        addButton.addActionListener(new AddWordClick());
+        addButton.addActionListener(new AddWordClick(addButton));
         panel.add(addButton);
         
         JButton deleteButton = new JButton("Delete word");

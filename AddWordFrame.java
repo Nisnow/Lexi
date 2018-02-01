@@ -18,9 +18,13 @@ public class AddWordFrame extends JFrame implements ActionListener
     private JButton okay;
     private JButton cancel;
     
-    public AddWordFrame()
+    private JButton buttonToEnable;
+    
+    public AddWordFrame(JButton bte)
     {
         //create the window
+        buttonToEnable = bte;
+        
         setTitle("Add new word");
         setSize(300, 300);
         setResizable(false);
@@ -47,9 +51,11 @@ public class AddWordFrame extends JFrame implements ActionListener
         add(buttonPanel, BorderLayout.PAGE_END); 
         
         okay = new JButton("Okay");
+        okay.addActionListener(this);
         //addActionListener....
         
         cancel = new JButton("Cancel");
+        cancel.addActionListener(this);
         //also here
         
         buttonPanel.add(okay);
@@ -58,15 +64,19 @@ public class AddWordFrame extends JFrame implements ActionListener
     
     public void actionPerformed(ActionEvent e)
     {
-        //this doesn't work yet
         if(e.getSource() == okay)
         {
             //toss new word into table
+            WordAdder.addWord(inputConword.getText(), inputTrans.getText());
+            
+            
             this.dispose();
+            buttonToEnable.setEnabled(true);
         }
         else if(e.getSource() == cancel)
         {
             this.dispose();
+            buttonToEnable.setEnabled(true);
         }
     }
 }

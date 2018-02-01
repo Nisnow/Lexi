@@ -49,6 +49,9 @@ public class TxtOpener implements ActionListener
                 Window.dtable.setDataVector(words, Window.tableNames);
                 Window.wordTable.setModel(Window.dtable);
                 
+                //store current file in WordAdder()
+                WordAdder.setFile(file.getAbsolutePath());
+                
                 System.out.println("Opening: " + file.getAbsolutePath() + "." + "\n");
             }
             else
@@ -60,5 +63,10 @@ public class TxtOpener implements ActionListener
         {
             //stuff
         }
+    }
+    
+    public File getCurrentFile()
+    {
+        return file;
     }
 }
