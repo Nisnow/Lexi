@@ -19,12 +19,12 @@ public class Window extends JFrame implements ActionListener
     public static String[] tableNames = {"Conlang", "Translation"};
     public static final DefaultTableModel dtable = new DefaultTableModel(words, tableNames);
     
-    public static JTable wordTable;
+    public static JTable wordTable; 
     
     public Window()
     {
         //thank the Lord for GUI editors, yeesh
-        setSize(1500, 1000);
+        setSize(500, 500);
         setResizable(true);
         setVisible(true);
         
@@ -69,6 +69,7 @@ public class Window extends JFrame implements ActionListener
         panel.add(verticalStrut);
         
         JButton addButton = new JButton("Add word");
+        addButton.addActionListener(new AddWordClick());
         panel.add(addButton);
         
         JButton deleteButton = new JButton("Delete word");

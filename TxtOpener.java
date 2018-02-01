@@ -42,6 +42,8 @@ public class TxtOpener implements ActionListener
                 //toss the text from the selected file into an array
                 file = chooser.getSelectedFile();
                 String[][] words = TableOrganizer.organizeWords(file.getAbsolutePath());
+                //set title of conlang to name of file
+                Window.tableNames[0] = file.getName().substring(0, file.getName().indexOf("."));
                 
                 //update the table
                 Window.dtable.setDataVector(words, Window.tableNames);
