@@ -18,7 +18,7 @@ public class TxtOpener implements ActionListener
     private JButton tButton; 
     private JFileChooser chooser;
     private Window window; 
-    private File file;
+    private static File file;
     private JTable table;
     private JPanel panel;
     
@@ -65,7 +65,7 @@ public class TxtOpener implements ActionListener
         }
     }
     
-    public File getCurrentFile()
+    public static File getCurrentFile()
     {
         return file;
     }

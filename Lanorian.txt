@@ -1,6 +1,7 @@
-arjetuq		silver metal
 fervjak		to burn
 vher		day
-tu		three
 khiv		four
 amaruk		to wonder
+vhik		to have
+tu		three
+arjetuq		silver metal

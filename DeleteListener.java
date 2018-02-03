@@ -29,7 +29,7 @@ public class DeleteListener implements ActionListener
         }
         catch(Exception exc)
         {
-            System.out.println("Uh oh, spaghetti-o's. " + exc.getMessage());
+            System.out.println("There's no table open, ya dingus. " + exc.getMessage());
         }
     }
 }
