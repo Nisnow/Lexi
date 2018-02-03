@@ -35,7 +35,6 @@ public class FileOpener
           //read the file line by line, storing words into respective arrays
           while((wLine = br.readLine()) != null)
           {
-              System.out.println(wLine);
               conWords.add(wLine.substring(0, wLine.indexOf("\t"))); //extract conword from string
               translations.add(wLine.substring(wLine.lastIndexOf("\t") + 1)); //extract translation from string
           }

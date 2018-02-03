@@ -18,7 +18,6 @@ public class WordAdder //this class is a snake
     public static void setFile(String path)
     {
         fileName = path;
-        System.out.println(fileName);
     }
     
     public static void addWord(String conword, String translation)

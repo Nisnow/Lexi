@@ -38,9 +38,11 @@ public class WordDeleter
             BufferedReader reader = new BufferedReader(new FileReader(file));
             BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
             
+            //TODO: formatting
             String lineToRemove = conword + "\t\t" + translation;
             String cLine; boolean first = true;
             
+            //read through the file
             while((cLine = reader.readLine()) != null)
             {
                 String tLine = cLine.trim();
@@ -64,13 +66,9 @@ public class WordDeleter
             
             file.delete();
             //rename the temporary file to the original
-            if(tempFile.renameTo(file))
-                System.out.println("File renamed to " + file.getName());
-            else
-                System.out.println("Could not rename file");
+            tempFile.renameTo(file);
                 
-            //update table
-            System.out.println(tempFile.getName() + " " + file.getName());    
+            //update table  
             String[][] words = TableOrganizer.organizeWords(file.getAbsolutePath());
             
             Window.dtable.setDataVector(words, Window.tableNames);
