@@ -89,8 +89,10 @@ public class Window extends JFrame implements ActionListener
         
         
         
-        wordTable = new JTable(dtable);
+        wordTable = new JTable(dtable);       
+        deleteButton.addActionListener(new DeleteListener(wordTable));
         
+        //hooray for super verbose method names
         JScrollPane scrollPane = new JScrollPane(wordTable);
         scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);

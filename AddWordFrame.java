@@ -69,7 +69,7 @@ public class AddWordFrame extends JFrame implements ActionListener
             //toss new word into table
             WordAdder.addWord(inputConword.getText(), inputTrans.getText());
             
-            
+            //close window
             this.dispose();
             buttonToEnable.setEnabled(true);
         }
