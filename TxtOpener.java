@@ -28,6 +28,9 @@ public class TxtOpener implements ActionListener
         tButton = button;
         window = w;
         panel = p;
+        
+        FileNameExtensionFilter filter = new FileNameExtensionFilter(".txt Files", "txt");
+        chooser.setFileFilter(filter);
     }
     
     public void actionPerformed(ActionEvent e)

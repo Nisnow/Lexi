@@ -12,9 +12,9 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 
-public class Window extends JFrame implements ActionListener
+public class Window extends JFrame
 {
-    public static JButton newButton, openButton;
+    public static JButton newButton, openButton, alphabetizeButton_1, alphabetizeButton_2;
     public static String[][] words = new String[0][0];
     public static String[] tableNames = {"Conlang", "Translation"};
     public static final DefaultTableModel dtable = new DefaultTableModel(words, tableNames);
@@ -78,10 +78,10 @@ public class Window extends JFrame implements ActionListener
         JButton searchButton = new JButton("Search word");
         panel.add(searchButton);
         
-        JButton alphabetizeButton_1 = new JButton("Alphabetize by Conlang");
+        alphabetizeButton_1 = new JButton("Alphabetize by Conlang");
         panel.add(alphabetizeButton_1);
         
-        JButton alphabetizeButton_2 = new JButton("Alphabetize by Translation");
+        alphabetizeButton_2 = new JButton("Alphabetize by Translation");
         panel.add(alphabetizeButton_2);
         
         Component verticalStrut_1 = Box.createVerticalStrut(20);
@@ -103,12 +103,9 @@ public class Window extends JFrame implements ActionListener
         splitPane.setRightComponent(panel_1);
         TxtOpener txto = new TxtOpener(fc, openButton, this, panel);
         panel_1.setLayout(new GridLayout());
+        
         openButton.addActionListener(txto);
-    }
-    
-    public void actionPerformed(ActionEvent e)
-    {
-    
+        alphabetizeButton_1.addActionListener(new AlphabetListener());
     }
     
     public static void main(String[] args)
