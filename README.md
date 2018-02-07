@@ -8,3 +8,6 @@ TO DO:
 - Alphabetize 
 - Filters (noun, verb, etc)
 - Derivations filter
+- Replace the listeners with buttons
+- Refactoring
+- JSON and XML implementation(?) 
