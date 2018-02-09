@@ -107,6 +107,7 @@ public class Window extends JFrame
         openButton.addActionListener(txto);
         alphabetizeButton_1.addActionListener(new AlphabetListener());
         alphabetizeButton_2.addActionListener(new AlphabetListener());
+        searchButton.addActionListener(new SearchListener(searchButton));
     }
     
     public static void main(String[] args)
