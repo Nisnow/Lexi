@@ -29,10 +29,8 @@ public class WordAdder //this class is a snake
             fw.write(conword + "\t\t" + translation);
             fw.close();
             
-            String[][] words = TableOrganizer.organizeWords(fileName);
-            
-            Window.dtable.setDataVector(words, Window.tableNames);
-            Window.wordTable.setModel(Window.dtable);
+            Alphabetizer a = new Alphabetizer();
+            a.sortWordsByConlang();
         }
         catch(Exception e)
         {

@@ -57,10 +57,6 @@ public class TxtOpener implements ActionListener
                 
                 System.out.println("Opening: " + file.getAbsolutePath() + "." + "\n");
             }
-            else
-            {
-                System.out.println("Open command cancelled." + "\n");
-            }
         }
         else if(e.getSource() == Window.newButton)
         {

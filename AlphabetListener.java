@@ -16,6 +16,7 @@ public class AlphabetListener implements ActionListener
         try
         {
             Alphabetizer a = new Alphabetizer();
+            a.sortWordsByConlang();
         }
         catch(Exception exc)
         {
