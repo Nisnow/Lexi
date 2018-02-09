@@ -13,33 +13,32 @@ import java.util.*;
 
 public class Alphabetizer
 {
-    //note to self: Collections.sort(listToSort); exists
-    //another note to self: ColumnComparator() exists as well
     private String filePath;
     private String[][] words;
     private String[] tconWords;
     private String[] tTranslations;
     
-    public Alphabetizer()
+    public int row; //alphabetize by conlang or translation
+    
+    public Alphabetizer(int t)
     {
         filePath = TxtOpener.getCurrentFile().getAbsolutePath();
         words = TableOrganizer.organizeWords(filePath); 
+        row = t;
     }
     
-    public void sortWordsByConlang() throws Exception
+    public void sortWords() throws Exception
     {
         Arrays.sort(words, new Comparator<String[]>()
         {
             public int compare(String[] row1, String[] row2)
             {
-                return row1[0].compareTo(row2[0]);
+                return row1[row].compareTo(row2[row]);
             }
         });
         
         File temp = new File("temp.txt");
-        /*
-        FileWriter writer = new FileWriter(temp);
-        PrintWriter out = new PrintWriter(writer);*/
+        
         BufferedWriter writer = new BufferedWriter(new FileWriter(temp));
         
         writer.write(words[0][0] + "\t\t" + words[0][1]);
@@ -58,10 +57,5 @@ public class Alphabetizer
         Window.wordTable.setModel(Window.dtable);
         //see note above; toss array thing here, sort, then make new file of sort
         //words
-    }
-    
-    public void sortWordsByTranslation()
-    {
-    
     }
 }

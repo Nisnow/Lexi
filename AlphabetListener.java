@@ -13,10 +13,14 @@ public class AlphabetListener implements ActionListener
     public void actionPerformed(ActionEvent e)
     {
         //TODO: e.getSource() == one of the buttons
+        int row = 0;
+        //sort by translation
+        if(e.getSource() == Window.alphabetizeButton_2) row = 1; 
+        
         try
         {
-            Alphabetizer a = new Alphabetizer();
-            a.sortWordsByConlang();
+            Alphabetizer a = new Alphabetizer(row);
+            a.sortWords();
         }
         catch(Exception exc)
         {

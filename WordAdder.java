@@ -29,8 +29,8 @@ public class WordAdder //this class is a snake
             fw.write(conword + "\t\t" + translation);
             fw.close();
             
-            Alphabetizer a = new Alphabetizer();
-            a.sortWordsByConlang();
+            Alphabetizer a = new Alphabetizer(0);
+            a.sortWords();
         }
         catch(Exception e)
         {
