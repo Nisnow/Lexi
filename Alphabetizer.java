@@ -15,16 +15,14 @@ public class Alphabetizer
 {
     private String filePath;
     private String[][] words;
-    private String[] tconWords;
-    private String[] tTranslations;
     
-    public int row; //alphabetize by conlang or translation
+    public int col; //alphabetize by conlang or translation
     
     public Alphabetizer(int t)
     {
         filePath = TxtOpener.getCurrentFile().getAbsolutePath();
         words = TableOrganizer.organizeWords(filePath); 
-        row = t;
+        col = t;
     }
     
     public void sortWords() throws Exception
@@ -33,7 +31,7 @@ public class Alphabetizer
         {
             public int compare(String[] row1, String[] row2)
             {
-                return row1[row].compareTo(row2[row]);
+                return row1[col].compareTo(row2[col]);
             }
         });
         
@@ -41,6 +39,7 @@ public class Alphabetizer
         
         BufferedWriter writer = new BufferedWriter(new FileWriter(temp));
         
+        //toss the newly organized word list into the temporary file
         writer.write(words[0][0] + "\t\t" + words[0][1]);
         for(int i = 1; i < words.length; i++)
         {
@@ -55,7 +54,5 @@ public class Alphabetizer
         
         Window.dtable.setDataVector(words, Window.tableNames);
         Window.wordTable.setModel(Window.dtable);
-        //see note above; toss array thing here, sort, then make new file of sort
-        //words
     }
 }

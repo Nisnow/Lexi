@@ -12,14 +12,14 @@ public class AlphabetListener implements ActionListener
 {
     public void actionPerformed(ActionEvent e)
     {
-        //TODO: e.getSource() == one of the buttons
-        int row = 0;
-        //sort by translation
-        if(e.getSource() == Window.alphabetizeButton_2) row = 1; 
+        /*0 = conlang; 1 = translation b.c. I didn't want to write the same
+        funcion twice :P*/
+        int col = 0;
+        if(e.getSource() == Window.alphabetizeButton_2) col = 1; 
         
         try
         {
-            Alphabetizer a = new Alphabetizer(row);
+            Alphabetizer a = new Alphabetizer(col);
             a.sortWords();
         }
         catch(Exception exc)
