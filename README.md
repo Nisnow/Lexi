@@ -1,5 +1,8 @@
 # Lexi
 A dynamic dictionary for your conlangs
+
+THIS PROJECT IS ABANDONED
+
 TO DO:
 - "New Lexicon" button fuctionality
 - Add word
